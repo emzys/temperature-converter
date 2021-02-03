@@ -39,8 +39,12 @@ const convert = () => {
 };
 
 convBtn.addEventListener('click', convert);
+converter.addEventListener('keyup', function(event){
+    if (event.key === 'Enter') {
+        convert();
+    }
+});
 changeBtn.addEventListener('click', swap);
-
 resetBtn.addEventListener('click', function() {
     result.innerText = '';
     converter.value = '';

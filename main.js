@@ -23,18 +23,23 @@ const swap = () => {
 };
 
 const convert = () => {
-    if (converter.value !== '') {
+    if (isNaN(converter.value)) {
+        result.innerText = `Please enter a correct number. 
+        Use a dot to separate the whole number part from the fractional part.`
+    } else if (converter.value !== '') {
         if (one.innerText === '°C') {
             fahrenheit = converter.value * 1.8 + 32;
             result.innerText = `${converter.value}°C equals ${fahrenheit.toFixed(1)}°F.`
             converter.value = '';
+            console.log(converter.value)
         } else {
             celsius = (converter.value - 32) / 1.8;
             result.innerText = `${converter.value}°F equals ${celsius.toFixed(1)}°C.`
             converter.value = '';
         }
     } else {
-        result.innerText = 'Please enter a number before you click the CONVERT button.'
+        result.innerText = `Please enter a number before you click the CONVERT button. 
+        Use a dot to separate the whole number part from the fractional part.`
     }
 };
 

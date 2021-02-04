@@ -33,6 +33,10 @@ input {
   color: rgb(172, 169, 169);
 }
 
+.result {
+  text-align: center;
+}
+
 button {
   margin: 0 30px;
   padding: 10px 30px;
